@@ -2,7 +2,6 @@ package pt.ulusofona.cm.kotlin.observerobservable.models
 
 import pt.ulusofona.cm.kotlin.observerobservable.interfaces.OnNoticiaListener
 import pt.ulusofona.cm.kotlin.observerobservable.interfaces.OnNumeroListener
-import sun.invoke.empty.Empty
 
 class Bufo(nome: String = "bufo") : Leitor(nome), OnNumeroListener, OnNoticiaListener {
     private val nums: MutableList<Int> = mutableListOf()
@@ -16,13 +15,13 @@ class Bufo(nome: String = "bufo") : Leitor(nome), OnNumeroListener, OnNoticiaLis
         nums.add(num)
     }
 
-    fun imprimeNumeros(): String{
-        val numsStr : StringBuilder = StringBuilder()
+    fun imprimeNumeros(): String {
+        val numsStr: StringBuilder = StringBuilder()
         nums.forEach { numsStr.append(it) }
         return "$nome escutou os seguintes numeros: $nums"
     }
 
-    fun imprimeNoticias(): String{
+    fun imprimeNoticias(): String {
         val noticiasStr: StringBuilder = StringBuilder()
         noticias.forEach { noticiasStr.append("${it.titulo},") }
         return "$nome leu as seguintes noticias: $nums"
