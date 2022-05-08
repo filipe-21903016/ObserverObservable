@@ -6,7 +6,7 @@ class LeitorImpar(nome: String) : Leitor(nome), OnNumeroListener {
     val numeros: MutableList<Int> = mutableListOf()
 
     override fun onReceiveNumero(num: Int) {
-        numeros.add(num)
+        if (num % 2 != 0) numeros.add(num)
     }
 
     fun imprimeNumeros() : String{
