@@ -7,7 +7,7 @@ import kotlin.math.max
 
 class CorreioDaLusofona(
     val maxLeitores : Int,
-    val noticias: MutableList<Noticia> = mutableListOf()
+    private val noticias: List<Noticia> = listOf()
 ) {
     private val leitores : MutableList<OnNoticiaListener> = mutableListOf()
 
