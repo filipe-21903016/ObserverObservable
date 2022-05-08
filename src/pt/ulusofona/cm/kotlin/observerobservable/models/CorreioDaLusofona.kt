@@ -21,7 +21,7 @@ class CorreioDaLusofona(
         leitores.forEach {
             if (leitor == it){
                 leitores.remove(it)
-                leitor.leitorRemovidoComSucesso()
+                it.leitorRemovidoComSucesso()
             }
         }
         throw LeitorInexistenteException()

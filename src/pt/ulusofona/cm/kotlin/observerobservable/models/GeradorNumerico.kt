@@ -20,7 +20,7 @@ class GeradorNumerico(
         leitores.forEach {
             if (leitor == it){
                 leitores.remove(it)
-                leitor.leitorRemovidoComSucesso()
+                it.leitorRemovidoComSucesso()
                 return
             }
         }
@@ -28,7 +28,7 @@ class GeradorNumerico(
     }
     private fun notificarLeitores() {
         leitores.forEach { leitor ->
-            numeros.forEach { num ->  leitor.onReceiveNumero(num) }
+            numeros.forEach { num -> leitor.onReceiveNumero(num) }
         }
     }
     fun iniciar() = notificarLeitores()
