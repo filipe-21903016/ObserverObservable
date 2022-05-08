@@ -9,8 +9,5 @@ class LeitorPar(nome:String = "LeitorPar"): Leitor(nome), OnNumeroListener {
         if (num % 2 == 0) numeros.add(num)
     }
 
-    fun imprimeNumeros() : String{
-        return "$nome leu os seguintes numeros pares: $numeros"
-    }
-
+    fun imprimeNumeros() : String = "$nome leu os seguintes numeros pares: $numeros"
 }

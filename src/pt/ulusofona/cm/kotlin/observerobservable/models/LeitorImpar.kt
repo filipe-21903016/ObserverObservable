@@ -9,7 +9,5 @@ class LeitorImpar(nome: String = "LeitorImpar") : Leitor(nome), OnNumeroListener
         if (num % 2 != 0) numeros.add(num)
     }
 
-    fun imprimeNumeros() : String{
-        return "$nome leu os seguintes numeros impares: $numeros"
-    }
+    fun imprimeNumeros() : String = "$nome leu os seguintes numeros impares: $numeros"
 }
