@@ -18,11 +18,10 @@ class CorreioDaLusofona(
     }
 
     fun removerLeitor(leitor: OnNoticiaListener){
-        leitores.forEach {
-            if (leitor == it){
-                leitores.remove(it)
-                it.leitorRemovidoComSucesso()
-            }
+        leitores.find { it == leitor }?.let {
+            leitores.remove(it)
+            it.leitorRemovidoComSucesso()
+            return
         }
         throw LeitorInexistenteException()
     }

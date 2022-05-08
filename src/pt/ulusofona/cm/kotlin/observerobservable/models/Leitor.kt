@@ -14,5 +14,4 @@ abstract class Leitor(val nome: String) : Registavel {
     }
 
     fun estaRegistado(): Boolean = registado
-
 }
