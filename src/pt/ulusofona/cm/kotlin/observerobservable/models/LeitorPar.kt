@@ -2,7 +2,7 @@ package pt.ulusofona.cm.kotlin.observerobservable.models
 
 import pt.ulusofona.cm.kotlin.observerobservable.interfaces.OnNumeroListener
 
-class LeitorPar(nome:String): Leitor(nome), OnNumeroListener {
+class LeitorPar(nome:String = "LeitorPar"): Leitor(nome), OnNumeroListener {
     val numeros: MutableList<Int> = mutableListOf()
 
     override fun onReceiveNumero(num: Int) {
