@@ -1,4 +1,4 @@
 package pt.ulusofona.cm.kotlin.observerobservable.exceptions
 
-class LeitorInexistenteException {
+class LeitorInexistenteException: Exception("Este leitor não está registado!") {
 }
