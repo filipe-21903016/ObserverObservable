@@ -3,7 +3,7 @@ package pt.ulusofona.cm.kotlin.observerobservable.models
 import pt.ulusofona.cm.kotlin.observerobservable.interfaces.OnNumeroListener
 
 class LeitorImpar(nome: String) : Leitor(nome), OnNumeroListener {
-    private val numeros: MutableList<Int> = mutableListOf()
+    val numeros: MutableList<Int> = mutableListOf()
 
     override fun onReceiveNumero(num: Int) {
         numeros.add(num)
