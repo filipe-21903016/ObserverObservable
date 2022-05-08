@@ -12,6 +12,6 @@ class LeitorImpar(nome: String = "LeitorImpar") : Leitor(nome), OnNumeroListener
     fun imprimeNumeros() : String{
         val numsStr : StringBuilder = StringBuilder()
         numeros.forEach { numsStr.append(it) }
-        return "$nome leu os seguintes numeros pares: $numsStr"
+        return "$nome leu os seguintes numeros impares: $numsStr"
     }
 }
