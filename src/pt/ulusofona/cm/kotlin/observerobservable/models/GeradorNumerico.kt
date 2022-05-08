@@ -6,28 +6,29 @@ import pt.ulusofona.cm.kotlin.observerobservable.interfaces.OnNumeroListener
 
 class GeradorNumerico(
     val maxLeitores: Int,
-    private val nums: MutableList<Int> = mutableListOf()
+    private val numeros: MutableList<Int> = mutableListOf()
 ) {
-    private val numListeners: MutableList<OnNumeroListener> = mutableListOf()
+    private val leitores: MutableList<OnNumeroListener> = mutableListOf()
 
     fun adicionarLeitor(leitor: OnNumeroListener) {
-        if (numListeners.size == maxLeitores) throw LimiteDeLeitoresAtingidoException("GeradorNumerico", maxLeitores)
-        numListeners.add(leitor)
+        if (leitores.size == maxLeitores) throw LimiteDeLeitoresAtingidoException("GeradorNumerico", maxLeitores)
+        leitores.add(leitor)
         leitor.leitorAdicionadoComSucesso()
     }
 
     fun removerLeitor(leitor: OnNumeroListener) {
-        numListeners.forEach {
+        leitores.forEach {
             if (leitor == it){
-                numListeners.remove(it)
+                leitores.remove(it)
                 leitor.leitorRemovidoComSucesso()
+                return
             }
         }
         throw LeitorInexistenteException()
     }
     private fun notificarLeitores() {
-        numListeners.forEach { leitor ->
-            nums.forEach { num ->  leitor.onReceiveNumero(num) }
+        leitores.forEach { leitor ->
+            numeros.forEach { num ->  leitor.onReceiveNumero(num) }
         }
     }
     fun iniciar() = notificarLeitores()
