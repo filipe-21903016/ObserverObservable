@@ -2,10 +2,11 @@ package pt.ulusofona.cm.kotlin.observerobservable.models
 
 import pt.ulusofona.cm.kotlin.observerobservable.interfaces.OnNoticiaListener
 import pt.ulusofona.cm.kotlin.observerobservable.interfaces.OnNumeroListener
+import sun.invoke.empty.Empty
 
 class Bufo(nome: String = "bufo") : Leitor(nome), OnNumeroListener, OnNoticiaListener {
-    private val nums: ArrayList<Int> = ArrayList()
-    private val noticias: ArrayList<Noticia> = ArrayList()
+    private val nums: MutableList<Int> = mutableListOf()
+    val noticias: MutableList<Noticia> = mutableListOf()
 
     override fun onReceiveNoticia(noticia: Noticia) {
         noticias.add(noticia)

@@ -7,9 +7,9 @@ import kotlin.math.max
 
 class CorreioDaLusofona(
     val maxLeitores : Int,
-    private val noticias: List<Noticia>
+    private val noticias: MutableList<Noticia> = mutableListOf()
 ) {
-    private val noticiaListeners : ArrayList<OnNoticiaListener> = ArrayList()
+    private val noticiaListeners : MutableList<OnNoticiaListener> = mutableListOf()
 
     fun adicionarLeitor(leitor : OnNoticiaListener){
         if (noticiaListeners.size == maxLeitores) throw LimiteDeLeitoresAtingidoException("CorreioDaLusofona", maxLeitores)
